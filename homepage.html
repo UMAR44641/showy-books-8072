@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <style>
+        body{
+            margin: 0px;
+        }
+        .menu{
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .drop{
+            display: none;
+            position: relative;
+            top: 50%;
+        }
+        .drop a{
+            padding: 16px;
+            display: block;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+        }
+        .menu:hover .drop{
+            display: block;
+        }
+        .header ul{
+            list-style: none;
+        }
+        .navbar ul{
+            list-style: none;
+            display: inline-block;
+        }
+        .navbar>ul{
+           display: inline-block;
+        }
+        .navbar{
+            display: inline-block;
+            text-align: center;
+            margin: auto;
+            text-align:start;
+            height: 30px;
+            margin-top: -50px;
+            width: 99%;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        .navbar>ul>li:hover{
+            background-color: black;
+            color: white;
+        }
+        .navbar>ul>li{
+            position: relative;
+            cursor: pointer;
+            letter-spacing: 1px;
+            font-family: Lato-Light, Helvetica, Arial, sans-serif;
+            float: left;
+            height: 20px;
+            line-height: 30px;
+            padding: 15px;
+            color: grey;
+        }
+        .dropdown{
+            position: relative;
+            left: -50px;
+            top: 30%;
+            width: 100%;
+        }
+        .dropdown li{
+            display: none;
+            font-size: 14px;
+        }
+        .navbar li:hover > .dropdown li{
+            display: block;
+            color: black;
+            background-color: white;
+        }
+        .navbar li:hover > .dropdown{
+            perspective: 1000px;
+        }
+        .icon-rtl {
+           padding-right: 25px;
+           background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat right;
+           background-size: 20px;
+        }
+        hr {
+           display : block ;
+           height : 2px ;
+           border : 0 ;
+           border-top : 2px solid black ;
+           margin : 2em 0 ;
+           padding : 0 ;
+        }
+        .header{
+            display: grid;
+            grid-template-columns: 20% 50% 15% 15%;
+            gap: 20px;
+            margin: 0px 100px;
+        }
+        .header>div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            line-height: 2px;
+            cursor: pointer;
+        }
+        .header input{
+            width: 60%;
+            height: 30px;
+            padding: 4px 15px;
+            border-color: rgb(170,170,170);
+        }
+        .header>div>h1{
+            font-size: 52px;
+            margin-bottom: 15px;
+            font-family: Lato-Light, Helvetica, Arial, sans-serif;
+            font-weight: 500;
+        }
+        .header>div>p{
+            font-size: 14px;
+        }
+        .header img{
+            width: 20%;
+            display: inline;
+        }
+        .row{
+            display: flex;
+            margin-left: 40px;
+        }
+        .row>div{
+            display: flex;
+            align-items: center;
+        }
+        .offers{
+            margin-top: -15px;
+            justify-content: center;
+             padding: 20px 0px;
+             background-color: #F2F2F2;
+        }
+        .offers div{
+           font-size: 14px;
+        }
+        .offers>div{
+            width: 70%;
+            display: grid;
+            grid-template-columns: 20% 20% 40% 20%;
+            gap: 0px;
+            justify-content: space-evenly;
+            margin: auto;
+        }
+        .offers>div>div{
+            width: auto;
+            display: flex;
+            align-items: center;
+            letter-spacing: 1px;
+        }
+        .offers div{
+            display: flex;
+        }
+        svg{
+            width: 20px;
+            margin-right: 8px;
+        }
+        .top{
+            display: flex;
+            padding-left: 1300px;
+            background-color: #F2F2F2;
+            height: 30px;
+            align-items: center;
+        }
+        .top>div{
+            padding-right: 50px;
+        }
+        .top>div>img{
+            width: 20px;
+            border-radius: 50%;
+            height: 20px;
+        }
+        .sale{
+            height: 40px;
+            width: 90%;
+            background-color: black;
+            color: white;
+            margin: auto;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 21px;
+            font-weight: 700;
+            font-family: Lato-Bold, Helvetica, Arial, sans-serif;
+            line-height: 25px;
+            margin-top: 15px;
+            margin-bottom: 15px
+        }
+        .sale:hover{
+            background-color: white;
+            color: black;
+            cursor: pointer;
+        }
+        .slideshow-container {
+          max-width: 90%;
+          position: relative;
+          margin: auto;
+        }
+       .mySlides {
+       display: none;
+        }
+       .prev, .next {
+        cursor: pointer;
+       position: absolute;
+       top: 50%;
+       width: auto;
+       margin-top: -22px;
+       padding: 16px;
+       color: white;
+       font-weight: bold;
+       font-size: 18px;
+       transition: 0.6s ease;
+       border-radius: 0 3px 3px 0;
+       user-select: none;
+      }
+     .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+     }
+    .prev:hover, .next:hover {
+     background-color: rgba(0,0,0,0.8);
+     }
+    .dot {
+     cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    } 
+   .active, .dot:hover {
+    background-color: #717171;
+   }
+   .fade {
+   animation-name: fade;
+   animation-duration: 1.5s;
+   }
+
+   @keyframes fade {
+   from {opacity: .4}
+   to {opacity: 1}
+   }
+   p{
+    font-size: 36px;
+    text-align: center;
+    font-family: Lato-Regular, Helvetica, Arial, sans-serif;
+    margin-top: 10px;
+    font-weight: 300px;
+   }
+   .category{
+    display: grid;
+    width: 85%;
+    grid-template-columns: repeat(6,1fr);
+    gap: 35px;
+    margin: auto;
+   }
+   .category div{
+    cursor: pointer;
+   }
+   .category>div>img{
+    width: 100%;
+   }
+   .trending h3{
+       font-family: Lato-Regular, Helvetica, Arial, sans-serif;
+       font-size: 18px;
+       font-weight: 400;
+   }
+   .trending h4{
+       font-family: Lato-Regular, Helvetica, Arial, sans-serif;
+       font-size: 14px;
+       font-weight: 300;
+   }
+   .trending>div{
+    text-align: center;
+   }
+   .trending{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 90%;
+    margin: auto;
+    gap: 30px;
+   }
+   .trending img{
+    width: 100%;
+    border-radius: 50%;
+    }
+    .trending button{
+        padding: 15px;
+        background: none;
+        border-color: #bbb;
+        color: #bbb;
+        cursor: pointer;
+    }
+    .image{
+        margin: auto;
+        width: 90%;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    .image img{
+        width: 100%;
+    }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png" alt=""></div>
+        <div>us-USD</div>
+        <div>Help</div>
+    </div>
+    <div class="header">
+        <div>
+            <h1>SkinStore</h1>
+            <p>part of the <b>LOOKFANTASTIC </b> group</p>
+        </div>
+        <div>
+            <input type="text" class="icon-rtl" value placeholder="Search for a product or a brand...">
+        </div>
+        <div class="row">
+            <div class="menu">
+                <img src="https://static.vecteezy.com/system/resources/previews/005/545/335/original/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg" alt=""> Account
+                <div class="drop">
+                    <a href="#">Login</a>
+                    <a href="#">Register</a>
+                    <a href="#">Orders</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReBf1zBnSGgzHx8ZriqXa7laFhdChrDmY_YQ&usqp=CAU" alt=""> Cart</div>
+         </div>
+    </div>
+    <hr>
+    <div class="navbar">
+        <ul>
+            <li>brands</li>
+            <li>TheHolidayEdit</li>
+            <li>Sale</li>
+            <li>Skin Care
+                <ul class="dropdown">
+                     <li>Cleansers</li>
+                     <li>Moisturizers</li>
+                     <li>Serums</li>
+                     <li>Eye-Serum</li>
+                </ul>
+            </li>
+            <li>Hair</li>
+            <li>Makeup</li>
+            <li>Bath & Body</li>
+            <li>Fragrance</li>
+            <li>Self-Care</li>
+            <li>Tools</li>
+            <li>New & Trending</li>
+            <li>Build a routine</li>
+            <li>Advice</li>
+        </ul>
+    </div>
+    <div class="offers">
+        <div>
+            <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M64 104v88h96V96H72c-4.4 0-8 3.6-8 8zm482 88L465.1 96H384v96H546zm-226 0V96H224v96h96zM592 384H576c0 53-43 96-96 96s-96-43-96-96H256c0 53-43 96-96 96s-96-43-96-96H48c-26.5 0-48-21.5-48-48V104C0 64.2 32.2 32 72 32H192 352 465.1c18.9 0 36.8 8.3 49 22.8L625 186.5c9.7 11.5 15 26.1 15 41.2V336c0 26.5-21.5 48-48 48zm-64 0c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM160 432c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48z"/></svg>FREE US Shipping Over $49</div>
+            <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M64 64C28.7 64 0 92.7 0 128V384c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H64zm64 320H64V320c35.3 0 64 28.7 64 64zM64 192V128h64c0 35.3-28.7 64-64 64zM448 384c0-35.3 28.7-64 64-64v64H448zm64-192c-35.3 0-64-28.7-64-64h64v64zM288 352c-53 0-96-43-96-96s43-96 96-96s96 43 96 96s-43 96-96 96z"/></svg>Refer a Friend, Get $15</div>
+            <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M96 0C60.7 0 32 28.7 32 64V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H96zM208 288h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H144c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm96-96c0 35.3-28.7 64-64 64s-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64zM512 80c0-8.8-7.2-16-16-16s-16 7.2-16 16v64c0 8.8 7.2 16 16 16s16-7.2 16-16V80zM496 192c-8.8 0-16 7.2-16 16v64c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm16 144c0-8.8-7.2-16-16-16s-16 7.2-16 16v64c0 8.8 7.2 16 16 16s16-7.2 16-16V336z"/></svg>New Customers Save 20%-Use Code NEWBIE</div>
+            <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M16 64C16 28.7 44.7 0 80 0H304c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H80c-35.3 0-64-28.7-64-64V64zM224 448c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32zM304 64H80V384H304V64z"/></svg>Download Our App</div>
+        </div>     
+    </div>
+    <div class="sale">
+        Mid-week Flash Sale-Enjoy 20% off when you use code TREAT at the cart|SHOP NOW>
+    </div>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="https://static.thcdn.com/images/xlarge/webp/widgets/121-us/07/original-0531-STDCRE-36879-AP-SS-JUNE-SUMMER-SHOT-34-1180x450-063107.jpg" style="width:100%">
+        </div>
+      
+        <div class="mySlides fade">
+        <img src="https://static.thcdn.com/images/xlarge/webp/widgets/121-us/31/0916-41217-SS-AH-SkinStore-Sept-Batch-THG0035127-Shot04-1180x450-030331.jpg" style="width:100%">
+        </div>
+      
+        <div class="mySlides fade">
+          <img src="https://static.thcdn.com/images/xlarge/webp/widgets/121-us/10/original-New_Project_%283%29-085610.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="https://static.thcdn.com/images/xlarge/webp/widgets/121-us/34/0913-41217-LF-AH-SkinStore-Sept-Batch-THG0035127-Shot031180x450-021234.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="https://static.thcdn.com/images/xlarge/webp/widgets/121-us/54/0830-STDCRE-40753-WC-SS-Fragrance-GWP-Assets-1180x450-053654.jpg" style="width:100%">
+          </div>
+    
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+      
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+      <p>Shop by Category</p>
+      <div class="category">
+        <div><img src="https://static.thcdn.com/images/small/webp/widgets/121-us/01/Page-001-025201.png" alt=""></div>
+        <div><img src="https://static.thcdn.com/images/small/webp/widgets/121-us/09/Page-002-025209.png" alt=""></div>
+        <div><img src="https://static.thcdn.com/images/small/webp/widgets/121-us/17/Page-003-025217.png" alt=""></div>
+        <div><img src="https://static.thcdn.com/images/small/webp/widgets/121-us/21/Page-004-025221.png" alt=""></div>
+        <div><img src="https://static.thcdn.com/images/small/webp/widgets/121-us/40/Page-005-025240.png" alt=""></div>
+        <div><img src="https://static.thcdn.com/images/small/webp/widgets/121-us/58/Page-006-025258.png" alt=""></div>
+      </div>
+      <p>Trending Offers</p>
+      <div class="trending">
+        <div>
+            <img src="https://static.thcdn.com/images/small/webp/widgets/121-us/39/17_1009_CucumberExtract_US17_1009_CucumberExtract_US-014239.jpg" alt="">
+            <h3>SkinCeuticals Gift</h3>
+            <h4>Receive a SkinCeuticals Triple Lipid Restore 2:4:2 Sample when you spend $150 or more on the brand.</h4>
+            <button>SHOP NOW</button>
+        </div>
+        <div>
+            <img src="https://static.thcdn.com/images/small/webp/widgets/121-us/50/original-DRR_ShopTheRange_SkinStore_Mask_500x500-035450.jpg" alt="">
+            <h3>25% off select masks</h3>
+            <h4>Give your skin the rejuvenation & hydration it deserves with 25% off our wide range of masks from brand favorites!</h4>
+            <button>SHOP NOW</button>
+        </div>
+        <div>
+            <img src="https://static.thcdn.com/images/small/webp/widgets/121-us/13/185fe02e-c10d-42bf-8e01-ec7eb2687d7c-045913.jpg" alt="">
+            <h3>Brand of the Month: Sunday Riley</h3>
+            <h4>Powered by science and balanced by botanicals Sunday Riley gives the skin an immediate transformation with proven, measurable, results that can be seen instantly.</h4>
+            <button>SHOP NOW</button>
+        </div>
+        <div>
+            <img src="https://static.thcdn.com/images/small/webp/widgets/121-us/10/0224-STDCRE-32153-SS-BME-Skinstore-March-2022-Photography-Batching-Shot_14-600x600-091010.jpg" alt="">
+            <h3>TriPollar</h3>
+            <h4>TriPollar uses clinical expertise to create home-use devices that encourage skin regeneration and enhance natural beauty.</h4>
+            <button>SHOP NOW</button>
+        </div>
+        <div>
+            <img src="https://static.thcdn.com/images/small/webp/widgets/121-us/24/original-Shot_9_500x500-022524.jpg" alt="">
+            <h3>$16 First Aid Beauty Gift</h3>
+            <h4>Receive a First Aid Beauty Ultra Repair Cream 2.0 oz (Worth $16) when you spend $40 or more on the brand. </h4>
+            <button>SHOP NOW</button>
+        </div>
+        <div>
+            <img src="https://static.thcdn.com/images/small/webp/widgets/121-us/50/original-original-SkinStoreImage2-044740-015450.png" alt="">
+            <h3>Newest Arrivals</h3>
+            <h4>We scour the globe around the clock to bring you new breakthrough products. Check back regularly as we are always adding more!</h4>
+            <button>SHOP NOW</button>
+        </div>
+      </div>
+      <div class="image"><img src="https://static.thcdn.com/images/xlarge/webp/widgets/121-us/23/0907-STDCRE-40923-JCS-Skinstore_September_Referral_Campaign_Strip%28Trade%29-1180x200-011123.jpg" alt="">
+      </div>
+      <p>What People Are Buying Right Now</p>
+</body>
+</html>
+
+<script>
+    let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>

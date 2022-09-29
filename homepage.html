@@ -93,9 +93,9 @@
         }
         hr {
            display : block ;
-           height : 2px ;
+           height : 0px ;
            border : 0 ;
-           border-top : 2px solid black ;
+           border-top : 1px solid black ;
            margin : 2em 0 ;
            padding : 0 ;
         }
@@ -117,7 +117,8 @@
             width: 60%;
             height: 30px;
             padding: 4px 15px;
-            border-color: rgb(170,170,170);
+            border-color: black;
+            border-width: 1px;
         }
         .header>div>h1{
             font-size: 52px;
@@ -245,7 +246,7 @@
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
-    } 
+    }
    .active, .dot:hover {
     background-color: #717171;
    }
@@ -287,6 +288,15 @@
        font-family: Lato-Regular, Helvetica, Arial, sans-serif;
        font-size: 14px;
        font-weight: 300;
+       color: #717171;
+       height: 40px;
+   }
+   .buying h4{
+    font-family: Lato-Regular, Helvetica, Arial, sans-serif;
+       font-size: 14px;
+       font-weight: 300;
+       color: #717171;
+       height: 20px;
    }
    .trending>div{
     text-align: center;
@@ -305,9 +315,11 @@
     .trending button{
         padding: 15px;
         background: none;
-        border-color: #bbb;
+        border-color: black;
         color: #bbb;
         cursor: pointer;
+        margin-top: 10px;
+        border-width: 1px;
     }
     .image{
         margin: auto;
@@ -316,6 +328,68 @@
         margin-bottom: 25px;
     }
     .image img{
+        width: 100%;
+    }
+    .buying{
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 30px;
+        width: 90%;
+    }
+    .buying img{
+        width: 100%;
+    }
+    .buying>div{
+        text-align: center;
+    }
+    .buying button{
+        display: flex;
+        padding: 10px;
+        align-items: center;
+        justify-content: center;
+        background: rgb(51,51,51);
+        color: white;
+        width: 100%;
+        margin-top: 10px;
+        cursor: pointer;
+        text-align: center;
+    }
+    button:hover{
+        background-color: rgb(88, 141, 123);
+    }
+    .logos{
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        gap: 20px;
+        width: 90%;
+        margin-top: 20px;
+    }
+    .logos img{
+        width: 100%;
+    }
+    .logos>div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .image{
+        width: 90%;
+        margin: auto;
+        margin-top: 30px;
+        border: 1px solid black;
+        cursor: pointer;
+        margin-bottom: 40px;
+    }
+    .imag{
+        width: 90%;
+        margin: auto;
+        margin-top: 30px;
+        cursor: pointer;
+    }
+    .imag img{
         width: 100%;
     }
     </style>
@@ -465,9 +539,72 @@
             <button>SHOP NOW</button>
         </div>
       </div>
-      <div class="image"><img src="https://static.thcdn.com/images/xlarge/webp/widgets/121-us/23/0907-STDCRE-40923-JCS-Skinstore_September_Referral_Campaign_Strip%28Trade%29-1180x200-011123.jpg" alt="">
+      <div class="imag"><img src="https://static.thcdn.com/images/xlarge/webp/widgets/121-us/23/0907-STDCRE-40923-JCS-Skinstore_September_Referral_Campaign_Strip%28Trade%29-1180x200-011123.jpg" alt="">
       </div>
       <p>What People Are Buying Right Now</p>
+      <div class="buying">
+        <div>
+            <img src="https://static.thcdn.com/images/small/webp//productimg/480/480/13524404-5734930150395321.jpg" alt="">
+            <h4>Epionce Luminous Eye Serum 0.53ml</h4>
+            <h4>MSRP: <strike>$67.00</strike></h4>
+            <h4><b>$53.60</b></h4>
+            <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64v48H160V112zm-48 48H48c-26.5 0-48 21.5-48 48V416c0 53 43 96 96 96H352c53 0 96-43 96-96V208c0-26.5-21.5-48-48-48H336V112C336 50.1 285.9 0 224 0S112 50.1 112 112v48zm24 96c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24zm200-24c0 13.3-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24z"/></svg>SHOP NOW</button>
+        </div>
+        <div>
+            <img src="https://static.thcdn.com/images/small/webp//productimg/480/480/12596429-3594871019700125.jpg" alt="">
+            <h4>SkinMedica TNS Advanced+ Serum 1oz</h4>
+            <h4>MSRP: <strike>$295.00</strike></h4>
+            <h4><b>$265.50</b></h4>
+            <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64v48H160V112zm-48 48H48c-26.5 0-48 21.5-48 48V416c0 53 43 96 96 96H352c53 0 96-43 96-96V208c0-26.5-21.5-48-48-48H336V112C336 50.1 285.9 0 224 0S112 50.1 112 112v48zm24 96c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24zm200-24c0 13.3-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24z"/></svg>SHOP NOW</button>
+        </div>
+        <div>
+            <img src="https://static.thcdn.com/images/small/webp//productimg/480/480/11588281-8764882139037003.jpg" alt="">
+            <h4>Sunday Riley GOOD GENES All-In-One Lactic Acid Treatment (1.7oz)</h4>
+            <h4></h4>
+            <h4><b>$122.00</b></h4>
+            <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64v48H160V112zm-48 48H48c-26.5 0-48 21.5-48 48V416c0 53 43 96 96 96H352c53 0 96-43 96-96V208c0-26.5-21.5-48-48-48H336V112C336 50.1 285.9 0 224 0S112 50.1 112 112v48zm24 96c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24zm200-24c0 13.3-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24z"/></svg>SHOP NOW</button>
+        </div>
+        <div>
+            <img src="https://static.thcdn.com/images/small/webp//productimg/480/480/12358556-1974888087906815.jpg" alt="">
+            <h4>TriPollar STOP X Device - Rose Gold</h4>
+            <h4></h4>
+            <h4><b>$399.50</b></h4>
+            <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64v48H160V112zm-48 48H48c-26.5 0-48 21.5-48 48V416c0 53 43 96 96 96H352c53 0 96-43 96-96V208c0-26.5-21.5-48-48-48H336V112C336 50.1 285.9 0 224 0S112 50.1 112 112v48zm24 96c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24zm200-24c0 13.3-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24z"/></svg>SHOP NOW</button>
+        </div>
+      </div>
+      <div class="logos" >
+        <div><img src="https://static.thcdn.com/images/small/webp/widgets/121-us/26/180x72_4_233548301_CA_SS_Logo_Amend_BAU_THG0030424-041301-124116-063126.png" alt=""></div>
+        <div><img src="https://static.thcdn.com/images/small/webp/widgets/121-us/18/original-logo-1024x383-035229-063318.png" alt=""></div>
+        <div><img src="https://static.thcdn.com/images/small/webp/widgets/121-us/11/Revision_Skincare_Logo_without_Tag_Line-052511.png" alt=""></div>
+        <div><img src="https://static.thcdn.com/images/small/webp/widgets/121-us/46/original-NF_Skinstore_Banner_Logo_Color_320x140-01-011402-010546.png" alt=""></div>
+        <div><img src="https://static.thcdn.com/images/small/webp/widgets/121-us/27/220322-ELTAMD-LOGO-RGB-01-065127.png" alt=""></div>
+        <div><img src="https://static.thcdn.com/images/small/webp/widgets/121-us/07/original-LOGO-2022_SkinStore_Landing_Page-BLACK-060107.png" alt=""></div>
+      </div>
+      <p>Over On the Blog...</p>
+      <div class="trending">
+        <div>
+            <img src="https://static.thcdn.com/images/small/webp/widgets/121-us/06/original-SkinC_Ferulic-034413-012406.jpg" alt="">
+            <h3>SkinCeuticals: Vitamin C Beyond the Face</h3>
+            <h4>SkinCeuticals believes in celebrating the skin-protective and rejuvenating powers of vitamin C every day, but this year they’re making sure your eyes and lips get in on the antioxidant action (and benefits).</h4>
+            <button>READ MORE</button>
+        </div>
+        <div>
+            <img src="https://static.thcdn.com/images/small/webp/widgets/121-us/51/original-0224-STDCRE-32153-SS-BME-Skinstore-March-2022-Photography-Batching-Shot_13-500x500-023351.jpg" alt="">
+            <h3>Which TriPollar Device is Right for You?</h3>
+            <h4>In 2008, TriPollar launched themselves into the home beauty sphere with an aim to innovate the technology behind at-home treatments and devices.
+
+            </h4>
+            <button>READ MORE</button>
+        </div>
+        <div>
+            <img src="https://static.thcdn.com/images/small/webp/widgets/121-us/16/original-NB-IMAGE-5---2022-SKINSTORE-LANDING-PAGE-025016.jpg" alt="">
+            <h3>Discover Natura Bissé</h3>
+            <h4>With an aim to help their clients’ skin as they age and to turn their daily skin care routines into a moment of real self-care, Natura Bissé works to discover the latest scientific advancements and adapt them to the wellness industry.</h4>
+            <button>READ MORE</button>
+        </div>
+      </div>
+      <div class="image"><img src="https://static.thcdn.com/images/xlarge/webp/widgets/121-us/32/original-0308-STDCRE32346-SS-AH-SkinStore-Concierge-Banners-1180x200-084632.jpg" alt=""></div>
+      <hr>
 </body>
 </html>
 

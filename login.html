@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        body{
+            background-color: gainsboro;
+            margin: 0px;
+        }
+        .header{
+            background-color: white;
+            padding: 0px;
+            width: 100%;
+            margin-top: -35px;
+            cursor: pointer;
+        }
+       .header h1{
+        font-size: 52px;
+        margin-bottom: -25px;
+        font-family: Lato-Light, Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        margin-left: 50px;
+       }
+       .header p{
+        font-size: 14px;
+        margin-left: 50px;
+       }
+       .login{
+        display: flex;
+        width: 60%;
+        margin: auto;
+        gap: 20px;
+        margin-top: 30px;
+        justify-content: space-between;
+       }
+       .login>div{
+        background-color: white;
+        width: 40%;
+        padding: 30px;
+        line-height: 40px;
+       }
+       .login img{
+        width: 20px;
+       }
+       input{
+        height: 30px;
+       }
+       .login input+button{
+        border: none;
+        background-color: white;
+        cursor: pointer;
+       }
+       .btn1{
+        width: 100%;
+        height: 50px;
+        color: white;
+        background-color: black;
+        cursor: pointer;
+       }
+       .btn1:hover{
+        background-color: rgb(60, 92, 81);
+       }
+       .btn2{
+        padding: 10px 50px;
+        background-color: white;
+        border-width: 1px;
+        margin-right: 10px;
+        cursor: pointer;
+       }
+       .underline{
+        text-decoration: underline;
+       }
+       .underline:hover{
+        text-decoration: none;
+       }
+    </style>
+</head>
+<body>
+    <div class="header" onClick="my()">
+        <h1>SkinStore</h1>
+        <p>part of the <b>LOOKFANTASTIC </b> group</p>
+    </div>
+    <div class="login">
+        <div>
+            <h3>Existing Customers</h3>
+            <label for="">*Email address</label><br>
+            <input  id="email" type="email" required><br>
+            <label for="">*Password</label><br>
+            <input type="password" required id="password"><button onClick="myFunction()">SHOW</button>
+            <p class="underline">FORGOTTEN YOUR PASSWORD?</p>
+            <button class="btn1" onClick="sign()">SIGN IN</button>
+            <p>Or, Continue With</p>
+            <button class="btn2" onClick="fb()"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAAB+CAMAAADV/VW6AAAAYFBMVEU8Wpn///83V5djeKlpfaweR5Dq7PL6+/xacaUtUJXT2OTX2+cnTJJCXpvK0N8zVJZ9jbXg4+zEy9xUbKOCkrhJY54AO4uMmr2fqselsMuXo8Nxg6/09fi3v9QMP4wVQ44RctGrAAACH0lEQVRoge3b23KDIBAAUIuioka8Vm21+f+/rNE2nch6GQNLZrr7DJyIGBeSdd6shvMKfFBkLmpkRfDH5yWXDDUkD/1fPufMQQ+W+DMflBZ0x5FhMPEFt6E7Dk8nPpN2eNlMvGtl7se77xFPPPHEE69lZCbFHFLOmQQaP6YSLPSypu26tv1oquzTc8Pyor7XTPBS1FWR94uUru/99GKeZ4mbBnBS6ZvnuRuv5rTGeSaHjZTaNC9rfyujN8zLcrneMHlWryw5pKvfnHnTPC92dKO8zPZ0o/zX9rIzzItmVzfJy9wmz9x93SCfbH3ZIlz9gbk3x7NwlYzTewym+JWHPq7uGdeUdakfWw8vOkjvhNjpp4m/nVIoMVx3++nigZXXHxhTE38FXnbDgfMiXfce4I+cFxnkj4xpkA+t8gHxxBNPPPG6+IQ/xDvA11e+CBU5yYshjh4C2FovWkRRrs7HST5ZP8DZCPXnMky+r63yuToOJh9py/NP8UVile/UTQcmX9mdfADB5IG8H5MHdj2IvK8ufEw+tcsPwGYfkW/t8sBjj8lDBiIPjXM+23kIKNvJF02gww7EXE/j1S/jnyXaxBNPPPHEE0888cQTTzzxxBNPPPHEE/8S/LMFcWd50WgpBzzL82guhjzSVj8vb/9vvZWC+slT03+Ol+KnFHT0w2cKYROI3xlPcPdeCDs2TxvvdLgAn+30aaK54UsUQVuLb00tMc4nkxrYAAAAAElFTkSuQmCC" alt=""> Facebook</button>
+            <button class="btn2" onClick="google()"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQrDTc53OSM9f9xo5TknbcniGr-yO2WWsvLAlA5rWFig&s" alt=""> Google</button>
+        </div>
+        <div>
+            <h3>NEW CUSTOMERS</h3>
+            <button class="btn1">CONTINUE</button>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function myFunction() {
+      var x = document.getElementById("password");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+    function my(){
+        window.location.href="homepage.html";
+    }
+    function fb(){
+        window.location.assign("https://www.facebook.com/login.php?skip_api_login=1&api_key=1215984228522362&kid_directed_site=0&app_id=1215984228522362&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv3.2%2Fdialog%2Foauth%3Fclient_id%3D1215984228522362%26redirect_uri%3Dhttps%253A%252F%252Floginservice.thehut.net%252Ffacebook%252FhandleLogin%26state%3DRTNCMjAxQzQzRUI3Nzg4NjU4MEZENzBDQ0FFMkM1RkI5Q0U1OEM2REFCMzdBOUZGN0FCNDE5NjA1MjM3ODUxQQ%253D%253D.ZXlKbGVIQnBjbmxVYVcxbElqb3hOalkwTlRRMU16a3hNalF4TENKamMzSm1WRzlyWlc0aU9pSmhNRFpsWXpGaE9TMWhNRFkzTFRRMk5XVXRPRE5rWlMwMVpEazBaRE5rWkRVNVpHVWlMQ0p6YVhSbElqb2lNVEl4SWl3aWMzVmljMmwwWlNJNkluVnpJaXdpWTJ4cFpXNTBVM1JoZEdVaU9pSmxlVXA1V2xoU01XTnROVlZpZVVrMlNXMW9NR1JJUW5wS1ZFNUNTbFJLUjBwVVNrZGtNMlF6VEc1T2NtRlhOWHBrUnpsNVdsTTFhbUl5TUd4TmExcG9XVEpPZG1SWE5UQlRSemwwV2xNMWFGa3lUblprVnpVd1NXNHdYSFV3TUROa0lpd2ljSEp2ZG1sa1pYSWlPaUptWVdObFltOXZheUlzSW5KbFpHbHlaV04wVlhKc0lqb2lhSFIwY0hNNkx5OTNkM2N1YzJ0cGJuTjBiM0psTG1OdmJTOXpiMk5wWVd4QmRYUm9aVzUwYVdOaGRHbHZiaTVoWTJOdmRXNTBJaXdpWm14dmR5STZJbE5JU1VWTVJDSjk%253D%26scope%3Demail%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Da24420dc-00a1-4230-85b2-a0d92f4ab3a0%26tp%3Dunspecified&cancel_url=https%3A%2F%2Floginservice.thehut.net%2Ffacebook%2FhandleLogin%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3DRTNCMjAxQzQzRUI3Nzg4NjU4MEZENzBDQ0FFMkM1RkI5Q0U1OEM2REFCMzdBOUZGN0FCNDE5NjA1MjM3ODUxQQ%253D%253D.ZXlKbGVIQnBjbmxVYVcxbElqb3hOalkwTlRRMU16a3hNalF4TENKamMzSm1WRzlyWlc0aU9pSmhNRFpsWXpGaE9TMWhNRFkzTFRRMk5XVXRPRE5rWlMwMVpEazBaRE5rWkRVNVpHVWlMQ0p6YVhSbElqb2lNVEl4SWl3aWMzVmljMmwwWlNJNkluVnpJaXdpWTJ4cFpXNTBVM1JoZEdVaU9pSmxlVXA1V2xoU01XTnROVlZpZVVrMlNXMW9NR1JJUW5wS1ZFNUNTbFJLUjBwVVNrZGtNMlF6VEc1T2NtRlhOWHBrUnpsNVdsTTFhbUl5TUd4TmExcG9XVEpPZG1SWE5UQlRSemwwV2xNMWFGa3lUblprVnpVd1NXNHdYSFV3TUROa0lpd2ljSEp2ZG1sa1pYSWlPaUptWVdObFltOXZheUlzSW5KbFpHbHlaV04wVlhKc0lqb2lhSFIwY0hNNkx5OTNkM2N1YzJ0cGJuTjBiM0psTG1OdmJTOXpiMk5wWVd4QmRYUm9aVzUwYVdOaGRHbHZiaTVoWTJOdmRXNTBJaXdpWm14dmR5STZJbE5JU1VWTVJDSjk%253D%23_%3D_&display=page&locale=en_GB&pl_dbl=0")
+    }
+    function google(){
+        window.location.assign("https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?client_id=1047782293270-uc6gapukv57blt03hbc6lt82dq80knbc.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Floginservice.thehut.net%2Fgoogle%2FhandleLogin&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&response_type=code&state=NTFCMjM1REE0MDgwNTUzQjExMTZBREQ0MTJBREY2QzBCNjE2NDZBRUVDMERBOTg3MUYyQ0E4RTAzQzgxMEMxNg%3D%3D.ZXlKbGVIQnBjbmxVYVcxbElqb3hOalkwTlRRMU5UTTJOVFU0TENKamMzSm1WRzlyWlc0aU9pSmxOakZtTURKak5pMHpOalJsTFRReE9XUXRPR0kxWVMwNFl6Y3habVJoT0dJNU1URWlMQ0p6YVhSbElqb2lNVEl4SWl3aWMzVmljMmwwWlNJNkluVnpJaXdpWTJ4cFpXNTBVM1JoZEdVaU9pSmxlVXA1V2xoU01XTnROVlZpZVVrMlNXMW9NR1JJUW5wS1ZFNUNTbFJLUjBwVVNrZGtNMlF6VEc1T2NtRlhOWHBrUnpsNVdsTTFhbUl5TUd4TmExcG9XVEpPZG1SWE5UQlRSemwwV2xNMWFGa3lUblprVnpVd1NXNHdYSFV3TUROa0lpd2ljSEp2ZG1sa1pYSWlPaUpuYjI5bmJHVWlMQ0p5WldScGNtVmpkRlZ5YkNJNkltaDBkSEJ6T2k4dmQzZDNMbk5yYVc1emRHOXlaUzVqYjIwdmMyOWphV0ZzUVhWMGFHVnVkR2xqWVhScGIyNHVZV05qYjNWdWRDSXNJbVpzYjNjaU9pSlRTRWxGVEVRaWZRPT0%3D&prompt=consent&flowName=GeneralOAuthFlow")
+    }
+    let arr=JSON.parse(localStorage.getItem("details"))||[];
+    function sign(){
+        if(document.getElementById("email").value!==""&&document.getElementById("password").value!==""){
+            let obj={
+        email: document.getElementById("email").value,
+        password: document.getElementById("password").value
+       }
+       arr.push(obj);
+       localStorage.setItem("details",JSON.stringify(arr));
+       document.getElementById("email").value=null;
+       document.getElementById("password").value=null;
+        }
+        alert("Login Successful")
+    }
+    </script>

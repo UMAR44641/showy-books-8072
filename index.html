@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Homepage</title>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -104,6 +105,7 @@
             grid-template-columns: 20% 50% 15% 15%;
             gap: 20px;
             margin: 0px 100px;
+            height: 100px;
         }
         .header>div{
             display: flex;
@@ -125,6 +127,10 @@
             margin-bottom: 15px;
             font-family: Lato-Light, Helvetica, Arial, sans-serif;
             font-weight: 500;
+        }
+        .header a:hover{
+            background-color: rgb(53, 170, 129);
+            color: white;
         }
         .header>div>p{
             font-size: 14px;
@@ -149,6 +155,7 @@
         }
         .offers div{
            font-size: 14px;
+           cursor: pointer;
         }
         .offers>div{
             width: 70%;
@@ -173,10 +180,11 @@
         }
         .top{
             display: flex;
-            padding-left: 1300px;
             background-color: #F2F2F2;
+            flex-direction: row-reverse;
             height: 30px;
             align-items: center;
+            width: 100%;
         }
         .top>div{
             padding-right: 50px;
@@ -446,16 +454,138 @@
         width: 50px;
         margin-right: 20px;
     }
+    .icon{
+       display: none;
+    }
+    @media all and (min-width:900px) and (max-width:1320px){
+        .top>div{
+            padding-right: 50px;
+        }
+        .header>div{
+            line-height: 13px;
+        }
+        .category{
+        grid-template-columns: repeat(3,1fr);
+       }
+       .trending{
+       grid-template-columns: repeat(2,1fr);
+       width: 70%;
+       gap: 30px;
+      }
+      .buying{
+        grid-template-columns: repeat(3,1fr);
+        width: 70%;
+       }
+       .trending h4{
+        margin-bottom: 30px;
+       }
+       .trending button{
+        padding: 5px;
+        font-size: 8px;
+       }
+       .footertop p{
+        font-size: 12px;
+       }
+       .sale{
+        height: 50px;
+       }
+    }
+    @media all and (min-width:100px) and (max-width:899px){
+        .top div{
+            padding-right: 20px;
+        }
+        .header>div{
+            margin: auto;
+            line-height: 10px;
+            padding-left: 0px 0px 0px 2px;
+            width: 15%;
+            margin-right: 0px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .header>div>h1{
+            font-size: 12px;
+            margin-bottom: -10px;
+        }
+        .header{
+            display: flex;
+            gap: 0px;
+            margin: auto;
+            width: 100%;
+            height: 50px;
+        }
+        .header>div>p{
+            font-size: 6px;
+        }
+        .header input{
+            width: 40%;
+            height: 10px;
+            margin-left: 20px;
+        }
+        .category{
+        grid-template-columns: repeat(2,1fr);
+        width: 50%;
+       }
+       .trending{
+       grid-template-columns: repeat(1,1fr);
+       width: 50%;
+      }
+      .trending button{
+        padding: 8px;
+        font-size: 8px;
+        margin-top: 40px;        
+      }
+      .buying{
+        grid-template-columns: repeat(2,1fr);
+        width: 50%;
+       }
+       .buying button{
+          font-size: 8px;
+          padding: 0px;
+       }
+       .buying h4{
+        margin-bottom: 50px;
+       }
+       .footertop p{
+        font-size: 8px;
+       }
+       .footermid{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+       }
+       .footerbot{
+        flex-direction: column-reverse;
+       }
+       .sale{
+        height: 70px;
+       }
+       .icon{
+        display: block;
+        width: 20px;
+        color: black;
+        margin: 10px;
+       }
+       .navbar{
+        display: none;
+       }
+       ::placeholder{
+        color: white;
+       }
     </style>
 </head>
 <body>
     <div class="top">
-        <div><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png" alt=""></div>
-        <div>us-USD</div>
         <div>Help</div>
+        <div>us-USD</div>
+        <div><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png" alt=""></div>
     </div>
-    <div class="header" onClick="my()">
-        <div>
+    <div class="header">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+        </a>
+        <div onClick="my()">
            <h1>SkinStore</h1>
             <p>part of the <b>LOOKFANTASTIC </b> group</p>
         </div>
@@ -467,7 +597,7 @@
                 <img src="https://static.vecteezy.com/system/resources/previews/005/545/335/original/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg" alt=""> Account
                 <div class="drop">
                     <a href="login.html">Login</a>
-                    <a href="#">Register</a>
+                    <a href="signup.html">Register</a>
                     <a href="#">Orders</a>
                 </div>
             </div>
@@ -733,14 +863,11 @@
 
 <script>
     let slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+    showSlides(slideIndex);
+    function plusSlides(n) {
+     showSlides(slideIndex += n);
 }
 
-// Thumbnail image controls
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
@@ -762,5 +889,13 @@ function showSlides(n) {
 }
 function my(){
     window.location.href="homepage.html"
+}
+function myFunction() {
+  var x = document.querySelector(".navbar");
+  if (x.style.display === "inline-block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "inline-block";
+  }
 }
 </script>

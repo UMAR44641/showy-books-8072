@@ -148,7 +148,7 @@
     let n=document.getElementById("confirmpassword");
     let arr=JSON.parse(localStorage.getItem("details"))||[];
     function signup(){
-        if(x.value!==""&&y.value!==""&&z.value!==""&&m.value!==""&&n.value!==""&&y.value==z.value&&m.value==n.value&&m.value.length>=8&&check(m.value)){
+        if(x.value!==""&&y.value!==""&&z.value!==""&&m.value!==""&&n.value!==""&&y.value==z.value&&m.value==n.value&&m.value.length>=8&&checkspecial(m.value)&&checkspace(m.value)==false){
         let obj={
         name: x.value,
         email: y.value,
@@ -173,9 +173,17 @@
           alert("Please fill all the details and password as mentioned")
         }
     }
-    function check(x){
+    function checkspecial(x){
       for(let i=0;i<x.length;i++){
         if(x[i]=="!"||x[i]=="@"||x[i]=="#"||x[i]=="$"||x[i]=="%"||x[i]=="&"){
+          return true;
+        }
+      }
+      return false;
+    }
+    function checkspace(x){
+      for(let i=0;i<x.length;i++){
+        if(x[i]==" "){
           return true;
         }
       }
